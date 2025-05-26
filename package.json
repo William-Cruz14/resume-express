@@ -1,15 +1,14 @@
 {
   "name": "resume",
   "version": "1.0.0",
-  "main": "api/index.js",
+  "main": "index.ts",
   "type": "commonjs",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js",
+    "start": "node api/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "william cruz",
   "license": "ISC",
   "description": "",
   "dependencies": {
