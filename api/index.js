@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const serverless = require('serverless-http');
 const { testConnection } = require('./config/database');
 const { syncDatabase } = require('./models');
 const resumeRoutes = require('./routes/resumes.routes');
@@ -20,18 +19,13 @@ app.use('/api/resumes', resumeRoutes);
 
 app.set('view engine', 'pug');
 
-const startServer = async () => {
+(async () => {
 	try {
 		await testConnection();
 		await  syncDatabase({ alter: true });
-		app.listen(port, () => {
-			console.log(`Servidor rodando na porta ${port}`);
-		});
 	} catch (error) {
 		console.error('Erro ao iniciar o servidor:', error);
 	}
-};
+})();
 
-startServer();
-
-module.exports = serverless(app);
+module.exports = app;
