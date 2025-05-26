@@ -22,7 +22,7 @@ const startServer = async () => {
 		await testConnection();
 		await  syncDatabase({ alter: true });
 		app.listen(port, () => {
-			console.log(`Servidor rodando em http://localhost:${port}`);
+			console.log(`Servidor rodando na porta ${port}`);
 		});
 	} catch (error) {
 		console.error('Erro ao iniciar o servidor:', error);
