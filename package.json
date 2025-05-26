@@ -1,10 +1,10 @@
 {
   "name": "resume",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "api/index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node api/index.ts",
+    "start": "node api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
